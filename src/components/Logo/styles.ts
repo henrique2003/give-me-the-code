@@ -7,6 +7,7 @@ export const Logo = styled.p`
   font-weight: 500;
   color: #76DBF3;
   font-weight: bold;
+  white-space: nowrap;
 
   span {
     color: white;
