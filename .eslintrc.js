@@ -11,7 +11,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'space-before-function-paren': 'off',
-    'array-callback-return': 'off',
-    '@typescript-eslint/no-unused-vars': 'error'
+    'array-callback-return': 'off'
   }
 }
