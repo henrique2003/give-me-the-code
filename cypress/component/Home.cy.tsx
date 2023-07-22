@@ -1,5 +1,5 @@
 import { Home } from '@/components'
-import { getDataCy } from '../utils'
+import { itemToBeVisible } from '../utils'
 
 describe('<Home />', () => {
   beforeEach(() => {
@@ -7,7 +7,6 @@ describe('<Home />', () => {
   })
 
   it('renders', () => {
-    cy.get(getDataCy('search-your-code'))
-      .should('be.visible')
+    itemToBeVisible('search-your-code')
   })
 })
