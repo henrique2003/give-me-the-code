@@ -1,5 +1,5 @@
 import { Aside } from '@/components'
-import { asideToBeClose, asideToBeOpen, getDataCy, setMobileViewport } from '../utils'
+import { asideToBeClose, asideToBeOpen, getDataCy, itemToBeVisible, logoToBeRender, setMobileViewport } from '../utils'
 import { actionLinks, navLinks } from '../mocks/navbar'
 
 interface IIcons {
@@ -24,16 +24,18 @@ const icons: IIcons[] = [
   }
 ]
 
+function mountComponent(status: boolean): void {
+  cy.mount(<Aside isOpen={status} />)
+}
+
 describe('<Aside />', () => {
   it('should be visible when aside is open on mobile render', () => {
     setMobileViewport()
 
-    cy.mount(<Aside isOpen={true} />)
+    mountComponent(true)
 
     asideToBeOpen()
-
-    cy.get(getDataCy('logo'))
-      .should('be.visible')
+    logoToBeRender()
 
     // Nav links
     navLinks.map(({
@@ -65,24 +67,19 @@ describe('<Aside />', () => {
     })
 
     // Icons
-    icons.map(({
-      dataCy
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('be.visible')
-    })
+    icons.map(({ dataCy }) => itemToBeVisible(dataCy))
   })
 
   it('should be hidden when aside is closed on mobile render', () => {
     setMobileViewport()
 
-    cy.mount(<Aside isOpen={false} />)
+    mountComponent(false)
 
     asideToBeClose()
   })
 
   it('should be hidden on web render', () => {
-    cy.mount(<Aside isOpen={true} />)
+    mountComponent(true)
 
     asideToBeClose()
   })
