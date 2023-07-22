@@ -15,7 +15,7 @@ export const Container = styled.aside<IContainerProps>`
   width: 300px;
   min-width: 300px;
   max-width: 300px;
-  height: 100vh;
+  height: 100%;
   padding: 20px;
   flex-direction: column;
   align-items: center;
