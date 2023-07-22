@@ -1,7 +1,13 @@
 import { Home } from '@/components'
+import { getDataCy } from '../utils'
 
 describe('<Home />', () => {
-  it('renders', () => {
+  beforeEach(() => {
     cy.mount(<Home />)
+  })
+
+  it('renders', () => {
+    cy.get(getDataCy('search-your-code'))
+      .should('be.visible')
   })
 })
