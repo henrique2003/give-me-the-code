@@ -4,6 +4,7 @@ import { itemsToBeVisible, itemsNotToBeVisible, itemNotToBeVisible, itemToBeVisi
 import { asideToBeClose, asideToBeOpen } from './aside-actions'
 import clickButton from './click-button'
 import logoToBeRender from './logo-to-be-render'
+import containText from './contain-text'
 
 export {
   getDataCy,
@@ -15,5 +16,6 @@ export {
   clickButton,
   itemNotToBeVisible,
   itemToBeVisible,
-  logoToBeRender
+  logoToBeRender,
+  containText
 }

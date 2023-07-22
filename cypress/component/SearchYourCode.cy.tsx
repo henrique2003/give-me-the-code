@@ -1,5 +1,5 @@
 import { SearchYourCode } from '@/components/Home/components'
-import { getDataCy, itemsToBeVisible } from '../utils'
+import { containText, itemsToBeVisible } from '../utils'
 
 const visibleItems = [
   'search-your-code',
@@ -16,7 +16,6 @@ describe('<SearchYourCode />', () => {
   it('renders', () => {
     itemsToBeVisible(visibleItems)
 
-    cy.get(getDataCy('title'))
-      .contains('Need some code for your application?')
+    containText('title', 'Need some code for your application?')
   })
 })
