@@ -1,10 +1,7 @@
+import { ILink } from '../utils/render-links'
+
 export interface INavLink {
   textName: string
-  link: string
-  dataCy: string
-}
-
-export interface IActionLink {
   link: string
   dataCy: string
 }
@@ -27,7 +24,7 @@ export const navLinks: INavLink[] = [
   }
 ]
 
-export const actionLinks: IActionLink[] = [
+export const actionLinks: ILink[] = [
   {
     link: '/login',
     dataCy: 'login-link'

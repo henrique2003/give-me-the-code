@@ -1,5 +1,5 @@
 import { Aside } from '@/components'
-import { getDataCy, setMobileViewport } from '../utils'
+import { asideToBeClose, asideToBeOpen, getDataCy, itemToBeVisible, logoToBeRender, renderLinks, setMobileViewport } from '../utils'
 import { actionLinks, navLinks } from '../mocks/navbar'
 
 interface IIcons {
@@ -24,27 +24,21 @@ const icons: IIcons[] = [
   }
 ]
 
+function mountComponent(status: boolean): void {
+  cy.mount(<Aside isOpen={status} />)
+}
+
 describe('<Aside />', () => {
   it('should be visible when aside is open on mobile render', () => {
     setMobileViewport()
 
-    cy.mount(<Aside isOpen={true} />)
+    mountComponent(true)
 
-    cy.get(getDataCy('aside'))
-      .should('have.css', 'left', '0px')
-
-    cy.get(getDataCy('logo'))
-      .should('be.visible')
+    asideToBeOpen()
+    logoToBeRender()
 
     // Nav links
-    navLinks.map(({
-      dataCy,
-      link
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('have.attr', 'href')
-        .and('equal', link)
-    })
+    renderLinks(navLinks)
 
     // Nav links text
     navLinks.map(({
@@ -56,37 +50,23 @@ describe('<Aside />', () => {
     })
 
     // Actions links
-    actionLinks.map(({
-      dataCy,
-      link
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('have.attr', 'href')
-        .and('equal', link)
-    })
+    renderLinks(actionLinks)
 
     // Icons
-    icons.map(({
-      dataCy
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('be.visible')
-    })
+    icons.map(({ dataCy }) => itemToBeVisible(dataCy))
   })
 
   it('should be hidden when aside is closed on mobile render', () => {
     setMobileViewport()
 
-    cy.mount(<Aside isOpen={false} />)
+    mountComponent(false)
 
-    cy.get(getDataCy('aside'))
-      .should('have.css', 'left', '-400px')
+    asideToBeClose()
   })
 
   it('should be hidden on web render', () => {
-    cy.mount(<Aside isOpen={true} />)
+    mountComponent(true)
 
-    cy.get(getDataCy('aside'))
-      .should('have.css', 'left', '-400px')
+    asideToBeClose()
   })
 })

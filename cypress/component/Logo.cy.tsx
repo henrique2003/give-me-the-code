@@ -1,5 +1,5 @@
 import { Logo } from '@/components'
-import { getDataCy } from '../utils'
+import { logoToBeRender } from '../utils'
 
 describe('<Logo />', () => {
   beforeEach(() => {
@@ -8,7 +8,6 @@ describe('<Logo />', () => {
 
   it('renders', () => {
     // Logo
-    cy.contains(getDataCy('logo'), '<GiveMeTheCode />')
-      .should('be.visible')
+    logoToBeRender()
   })
 })
