@@ -1,6 +1,6 @@
 import Navbar from '../../src/components/Navbar/index'
 import { actionLinks, navLinks } from '../mocks/navbar'
-import { clickButton, getDataCy, itemsNotToBeVisible, itemsToBeVisible, logoToBeRender, setMobileViewport } from '../utils'
+import { clickButton, getDataCy, itemsNotToBeVisible, itemsToBeVisible, logoToBeRender, renderLinks, setMobileViewport } from '../utils'
 
 describe('<Navbar />', () => {
   beforeEach(() => {
@@ -26,14 +26,7 @@ describe('<Navbar />', () => {
     })
 
     // Actions links
-    actionLinks.map(({
-      dataCy,
-      link
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('have.attr', 'href')
-        .and('equal', link)
-    })
+    renderLinks(actionLinks)
 
     // Actions icons
     itemsToBeVisible([

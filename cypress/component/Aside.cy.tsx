@@ -1,5 +1,5 @@
 import { Aside } from '@/components'
-import { asideToBeClose, asideToBeOpen, getDataCy, itemToBeVisible, logoToBeRender, setMobileViewport } from '../utils'
+import { asideToBeClose, asideToBeOpen, getDataCy, itemToBeVisible, logoToBeRender, renderLinks, setMobileViewport } from '../utils'
 import { actionLinks, navLinks } from '../mocks/navbar'
 
 interface IIcons {
@@ -38,14 +38,7 @@ describe('<Aside />', () => {
     logoToBeRender()
 
     // Nav links
-    navLinks.map(({
-      dataCy,
-      link
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('have.attr', 'href')
-        .and('equal', link)
-    })
+    renderLinks(navLinks)
 
     // Nav links text
     navLinks.map(({
@@ -57,14 +50,7 @@ describe('<Aside />', () => {
     })
 
     // Actions links
-    actionLinks.map(({
-      dataCy,
-      link
-    }) => {
-      cy.get(getDataCy(dataCy))
-        .should('have.attr', 'href')
-        .and('equal', link)
-    })
+    renderLinks(actionLinks)
 
     // Icons
     icons.map(({ dataCy }) => itemToBeVisible(dataCy))
