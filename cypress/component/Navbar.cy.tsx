@@ -1,6 +1,6 @@
 import Navbar from '../../src/components/Navbar/index'
 import { actionLinks, navLinks } from '../mocks/navbar'
-import { getDataCy, setMobileViewport } from '../utils'
+import { clickButton, getDataCy, itemsNotToBeVisible, itemsToBeVisible, setMobileViewport } from '../utils'
 
 describe('<Navbar />', () => {
   beforeEach(() => {
@@ -37,16 +37,16 @@ describe('<Navbar />', () => {
     })
 
     // Actions icons
-    cy.get(getDataCy('login-icon'))
-      .should('be.visible')
-    cy.get(getDataCy('cart-icon'))
-      .should('be.visible')
+    itemsToBeVisible([
+      'login-icon',
+      'cart-icon'
+    ])
 
     // Aside button
-    cy.get(getDataCy('aside-button'))
-      .should('not.be.visible')
-    cy.get(getDataCy('aside-button-icon'))
-      .should('not.be.visible')
+    itemsNotToBeVisible([
+      'aside-button',
+      'aside-button-icon'
+    ])
   })
 
   it('responsive renders', () => {
@@ -64,16 +64,16 @@ describe('<Navbar />', () => {
     })
 
     // Aside button
-    cy.get(getDataCy('aside-button'))
-      .should('be.visible')
-    cy.get(getDataCy('aside-button-icon'))
-      .should('be.visible')
+    itemsToBeVisible([
+      'aside-button',
+      'aside-button-icon'
+    ])
   })
 
   it('should call handleOpenAside function correctly', () => {
     setMobileViewport()
 
-    cy.get(getDataCy('aside-button')).click()
+    clickButton('aside-button')
 
     cy.get('@handleOpenAside')
       .should('be.called')

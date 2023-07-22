@@ -1,5 +1,5 @@
 import { Aside } from '@/components'
-import { getDataCy, setMobileViewport } from '../utils'
+import { asideToBeClose, asideToBeOpen, getDataCy, setMobileViewport } from '../utils'
 import { actionLinks, navLinks } from '../mocks/navbar'
 
 interface IIcons {
@@ -30,8 +30,7 @@ describe('<Aside />', () => {
 
     cy.mount(<Aside isOpen={true} />)
 
-    cy.get(getDataCy('aside'))
-      .should('have.css', 'left', '0px')
+    asideToBeOpen()
 
     cy.get(getDataCy('logo'))
       .should('be.visible')
@@ -79,14 +78,12 @@ describe('<Aside />', () => {
 
     cy.mount(<Aside isOpen={false} />)
 
-    cy.get(getDataCy('aside'))
-      .should('have.css', 'left', '-400px')
+    asideToBeClose()
   })
 
   it('should be hidden on web render', () => {
     cy.mount(<Aside isOpen={true} />)
 
-    cy.get(getDataCy('aside'))
-      .should('have.css', 'left', '-400px')
+    asideToBeClose()
   })
 })
