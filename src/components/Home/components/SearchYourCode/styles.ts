@@ -59,7 +59,6 @@ export const Search = styled.div`
   }
 
   @media(max-width: 500px) {
-    height: 40px;
     margin-top: 35px;
   }
 `
