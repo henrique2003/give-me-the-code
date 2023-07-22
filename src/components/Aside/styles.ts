@@ -13,6 +13,8 @@ export const Container = styled.aside<IContainerProps>`
   left: -400px;
   display: flex;
   width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   height: 100vh;
   padding: 20px;
   flex-direction: column;
