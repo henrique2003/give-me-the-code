@@ -6,10 +6,10 @@ import * as S from './styles'
 import { Logo } from '@/components'
 
 interface IProps {
-  handleOpenAside: () => void
+  handleToggleAside: () => void
 }
 
-const Navbar: React.FC<IProps> = ({ handleOpenAside }) => {
+const Navbar: React.FC<IProps> = ({ handleToggleAside }) => {
   return (
     <S.Container data-cy="navbar">
       <Logo />
@@ -29,7 +29,7 @@ const Navbar: React.FC<IProps> = ({ handleOpenAside }) => {
           <TfiShoppingCart data-cy="cart-icon" size={30} />
         </S.CartLink>
       </S.Actions>
-      <S.AsideButton type='button' data-cy='aside-button' onClick={handleOpenAside}>
+      <S.AsideButton type='button' data-cy='aside-button' onClick={handleToggleAside}>
         <GiHamburgerMenu data-cy='aside-button-icon' color='white' size={30} />
       </S.AsideButton>
     </S.Container>

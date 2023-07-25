@@ -1,5 +1,6 @@
 import { Navigation } from '@/components'
-import { asideToBeClose, asideToBeOpen, clickButton, itemsToBeVisible, setMobileViewport } from '../utils'
+import { asideToBeClose, asideToBeOpen, clickButton, getDataCy, itemToBeVisible, itemsToBeVisible, setMobileViewport } from '../utils'
+import { itemNotToBeVisible } from '../utils/visible-items'
 
 describe('<Navigation />', () => {
   beforeEach(() => {
@@ -18,6 +19,7 @@ describe('<Navigation />', () => {
 
     clickButton('aside-button')
 
+    itemToBeVisible('aside-overlay')
     asideToBeOpen()
   })
 
@@ -25,8 +27,9 @@ describe('<Navigation />', () => {
     setMobileViewport()
 
     clickButton('aside-button')
-    clickButton('aside-button')
+    clickButton('aside-overlay')
 
+    itemNotToBeVisible('aside-overlay')
     asideToBeClose()
   })
 })

@@ -4,9 +4,9 @@ import { clickButton, getDataCy, itemsNotToBeVisible, itemsToBeVisible, logoToBe
 
 describe('<Navbar />', () => {
   beforeEach(() => {
-    const handleOpenAside = cy.stub().as('handleOpenAside')
+    const handleToggleAside = cy.stub().as('handleToggleAside')
 
-    cy.mount(<Navbar handleOpenAside={handleOpenAside} />)
+    cy.mount(<Navbar handleToggleAside={handleToggleAside} />)
   })
 
   it('web renders', () => {
@@ -61,12 +61,12 @@ describe('<Navbar />', () => {
     ])
   })
 
-  it('should call handleOpenAside function correctly', () => {
+  it('should call handleToggleAside function correctly', () => {
     setMobileViewport()
 
     clickButton('aside-button')
 
-    cy.get('@handleOpenAside')
+    cy.get('@handleToggleAside')
       .should('be.called')
   })
 })
