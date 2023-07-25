@@ -1,7 +1,9 @@
 import { BiSearch } from 'react-icons/bi'
 
+import optionsCode from '@/mock/search-options'
+
 import * as S from './styles'
-import Title from './Title'
+import { OptionItem, Title } from './components'
 
 const SearchYourCode: React.FC = () => {
   return (
@@ -16,9 +18,12 @@ const SearchYourCode: React.FC = () => {
         <BiSearch size={25} data-cy="icon" />
       </S.Search>
       <S.Options>
-        <S.OptionItem href="/codes/screens/mobile">Mobile screens</S.OptionItem>
-        <S.OptionItem href="/codes/screens/mobile">Mobile screens</S.OptionItem>
-        <S.OptionItem href="/codes/screens/mobile">Mobile screens</S.OptionItem>
+        {optionsCode.length > 0 && optionsCode.map((item, index) => (
+          <OptionItem
+            item={item}
+            key={index}
+          />
+        ))}
       </S.Options>
     </S.Container>
   )

@@ -1,9 +1,9 @@
 'use client'
 
-import Link from 'next/link'
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -82,35 +82,32 @@ export const Input = styled.input`
 `
 
 export const Options = styled.div`
+  position: absolute;
+  bottom: -310px;
   border-radius: 20px;
   background: white;
   max-width: 500px;
   width: 100%;
-  height: 300px;
-  margin-top: 20px;
+  max-height: 300px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-`
+  overflow: hidden;
+  overflow-y: scroll;
 
-export const OptionItem = styled(Link)`
-  width: 100%;
-  color: rgba(0,0,0,0.6);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 20px 30px;
-  transition: all .2s ease;
-
-  &:hover {
-    transition: all .2s ease;
-    background: rgba(0,0,0,0.2);
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-
   @media(max-width: 800px) {
-    font-size: 17px;
+    bottom: -245px;
   }
 
   @media(max-width: 500px) {
-    font-size: 16px;
+    bottom: -215px;
+  }
+
+  @media(max-width: 443px) {
+    bottom: -255px;
   }
 `
