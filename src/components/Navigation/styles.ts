@@ -13,4 +13,5 @@ export const Overlay = styled.div<IOverlayProps>`
   height: 100%;
   background: rgba(0,0,0,0.3);
   display: ${({ isShow }) => isShow ? 'block' : 'none'};
+  z-index: 9;
 `

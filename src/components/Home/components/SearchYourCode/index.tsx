@@ -22,7 +22,7 @@ const SearchYourCode: React.FC = () => {
     setOptions(optionsCode)
   }, [])
 
-  const filtredOptions = options.filter(item => item.text.includes(searchInput))
+  const filtredOptions = options.filter(item => item.text.includes(searchInput.toLowerCase()))
 
   function handlleOptions(): JSX.Element {
     if (filtredOptions.length <= 0) return <></>
