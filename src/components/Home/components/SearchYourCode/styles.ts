@@ -83,13 +83,13 @@ export const Input = styled.input`
 
 export const Options = styled.div`
   position: absolute;
-  bottom: -310px;
+  top: 310px;
   border-radius: 20px;
   background: white;
   max-width: 500px;
   width: 100%;
   max-height: 300px;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -100,14 +100,14 @@ export const Options = styled.div`
   }
 
   @media(max-width: 800px) {
-    bottom: -245px;
+    top: 245px;
   }
 
   @media(max-width: 500px) {
-    bottom: -215px;
+    top: 215px;
   }
 
   @media(max-width: 443px) {
-    bottom: -255px;
+    top: 255px;
   }
 `

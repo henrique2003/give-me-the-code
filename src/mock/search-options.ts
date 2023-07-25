@@ -1,8 +1,4 @@
-interface IOptionItem {
-  link: string
-  text: string
-  subtext: string
-}
+import { IOptionItem } from '@/components/Home/components/SearchYourCode'
 
 const optionsCode: IOptionItem[] = [
   {
