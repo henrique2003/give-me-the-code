@@ -1,11 +1,12 @@
 import { BiSearch } from 'react-icons/bi'
 
 import * as S from './styles'
+import Title from './Title'
 
 const SearchYourCode: React.FC = () => {
   return (
     <S.Container data-cy="search-your-code">
-      <S.Title data-cy="title">Need some <span>code</span> for your application?</S.Title>
+      <Title />
       <S.Search data-cy="input-container">
         <S.Input
           type='text'
@@ -14,6 +15,11 @@ const SearchYourCode: React.FC = () => {
         />
         <BiSearch size={25} data-cy="icon" />
       </S.Search>
+      <S.Options>
+        <S.OptionItem href="/codes/screens/mobile">Mobile screens</S.OptionItem>
+        <S.OptionItem href="/codes/screens/mobile">Mobile screens</S.OptionItem>
+        <S.OptionItem href="/codes/screens/mobile">Mobile screens</S.OptionItem>
+      </S.Options>
     </S.Container>
   )
 }

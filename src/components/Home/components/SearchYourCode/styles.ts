@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -70,6 +71,40 @@ export const Input = styled.input`
   color: #808080;
   font-size: 18px;
   color: #808080;
+
+  @media(max-width: 800px) {
+    font-size: 17px;
+  }
+
+  @media(max-width: 500px) {
+    font-size: 16px;
+  }
+`
+
+export const Options = styled.div`
+  border-radius: 20px;
+  background: white;
+  max-width: 500px;
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+`
+
+export const OptionItem = styled(Link)`
+  width: 100%;
+  color: rgba(0,0,0,0.6);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 20px 30px;
+  transition: all .2s ease;
+
+  &:hover {
+    transition: all .2s ease;
+    background: rgba(0,0,0,0.2);
+  }
+
 
   @media(max-width: 800px) {
     font-size: 17px;
