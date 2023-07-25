@@ -24,6 +24,7 @@ export const Container = styled.aside<IContainerProps>`
   background: #2D2D2D;
   padding-top: 30px;
   transition: all .2s ease;
+  z-index: 11;
 
   @media(max-width: 800px) {
     left: ${({ isOpen }) => isOpen ? 0 : '-400px'};

@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 1;
 `
 
 export const Title = styled.h2`
