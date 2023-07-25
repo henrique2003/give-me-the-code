@@ -3,6 +3,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -77,5 +78,36 @@ export const Input = styled.input`
 
   @media(max-width: 500px) {
     font-size: 16px;
+  }
+`
+
+export const Options = styled.div`
+  position: absolute;
+  top: 310px;
+  border-radius: 20px;
+  background: white;
+  max-width: 500px;
+  width: 100%;
+  max-height: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media(max-width: 800px) {
+    top: 245px;
+  }
+
+  @media(max-width: 500px) {
+    top: 215px;
+  }
+
+  @media(max-width: 443px) {
+    top: 255px;
   }
 `
