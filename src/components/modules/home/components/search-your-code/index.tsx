@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { BiSearch } from 'react-icons/bi'
 
-import optionsCode from '@/mock/search-options'
+import optionsCode from '@/mocks/search-options'
 
 import * as S from './styles'
 import { OptionItem, Title } from './components'

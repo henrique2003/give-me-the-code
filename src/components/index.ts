@@ -1,12 +1,10 @@
-import Navbar from '@/components/Navbar'
-import Home from '@/components/Home'
-import Navigation from '@/components/Navigation'
-import Aside from '@/components/Aside'
-import Logo from '@/components/Logo'
+import Navbar from '@/components/core/navbar'
+import Navigation from '@/components/core/navigation'
+import Aside from '@/components/core/aside'
+import Logo from '@/components/core/logo'
 
 export {
   Navbar,
-  Home,
   Navigation,
   Aside,
   Logo

@@ -84,7 +84,7 @@ export const Input = styled.input`
 
 export const Options = styled.div`
   position: absolute;
-  top: 310px;
+  top: 340px;
   border-radius: 20px;
   background: white;
   max-width: 500px;
@@ -101,11 +101,11 @@ export const Options = styled.div`
   }
 
   @media(max-width: 800px) {
-    top: 245px;
+    top: 275px;
   }
 
-  @media(max-width: 500px) {
-    top: 215px;
+  @media(max-width: 517px) {
+    top: 255px;
   }
 
   @media(max-width: 443px) {
