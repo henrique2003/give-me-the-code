@@ -1,4 +1,4 @@
-import { SearchYourCode } from '@/components/Home/components'
+import { SearchYourCode } from '@/components/modules/home/components'
 import { containText, itemsToBeVisible } from '../utils'
 
 const visibleItems = [

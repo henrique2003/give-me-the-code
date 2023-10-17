@@ -1,4 +1,4 @@
-import { IOptionItem } from '@/components/Home/components/SearchYourCode'
+import { IOptionItem } from '@/components/modules/home/components/search-your-code'
 
 const optionsCode: IOptionItem[] = [
   {
