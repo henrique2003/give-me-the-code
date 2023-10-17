@@ -1,4 +1,4 @@
-import Navbar from '../../src/components/Navbar/index'
+import Navbar from '../../src/components/core/navbar/index'
 import { actionLinks, navLinks } from '../mocks/navbar'
 import { clickButton, getDataCy, itemsNotToBeVisible, itemsToBeVisible, logoToBeRender, renderLinks, setMobileViewport } from '../utils'
 
