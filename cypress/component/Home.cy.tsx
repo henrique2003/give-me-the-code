@@ -1,4 +1,4 @@
-import { Home } from '@/components'
+import { Home } from '@/components/modules'
 import { itemToBeVisible } from '../utils'
 
 describe('<Home />', () => {
